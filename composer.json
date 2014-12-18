@@ -1,0 +1,25 @@
+{
+  "name": "etdsolutions/pagination",
+  "type": "etd-package",
+  "description": "Package Pagination du Framework ETD",
+  "homepage": "https://github.com/etd-framework/pagination",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Jean-Baptiste Alleaume",
+      "email": "jb.alleaume@etd-solutions.com",
+      "homepage": "http://alleau.me",
+      "role": "Manager"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "joomla/data": "~1.0",
+    "joomla/language": "~1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "EtdSolutions\\Pagination\\": "src/"
+    }
+  }
+}
