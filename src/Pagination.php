@@ -9,6 +9,7 @@
 
 namespace EtdSolutions\Pagination;
 
+use EtdSolutions\Application\Web;
 use Joomla\Data\DataObject;
 use Joomla\Language\Text;
 
@@ -132,10 +133,12 @@ class Pagination extends DataObject {
      */
     public function getPagesCounter() {
 
+        $text = Web::getInstance()
+                   ->getText();
         $html = null;
 
         if ($this->getProperty('pagesTotal') > 1) {
-            $html .= Text::sprintf('APP_PAGINATION_HTML_PAGE_CURRENT_OF_TOTAL', $this->getProperty('pagesCurrent'), $this->getProperty('pagesTotal'));
+            $html .= $text->sprintf('APP_PAGINATION_HTML_PAGE_CURRENT_OF_TOTAL', $this->getProperty('pagesCurrent'), $this->getProperty('pagesTotal'));
         }
 
         return $html;
