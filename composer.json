@@ -16,7 +16,7 @@
   "require": {
     "php": ">=5.4",
     "joomla/data": "~1.0",
-    "joomla/language": "~1.0"
+    "joomla/language": "2.*@dev"
   },
   "autoload": {
     "psr-4": {
