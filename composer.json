@@ -15,7 +15,7 @@
   ],
   "require": {
     "php": ">=5.4",
-    "etdsolutions/data": "2.*@dev",
+    "joomla/data": "~1.0",
     "joomla/language": "2.*@dev"
   },
   "autoload": {
