@@ -9,11 +9,8 @@
 
 namespace EtdSolutions\Pagination;
 
-use EtdSolutions\Application\Web;
+use EtdSolutions\Language\LanguageFactory;
 use Joomla\Data\DataObject;
-use Joomla\Language\Text;
-
-defined('_JEXEC') or die;
 
 class Pagination extends DataObject {
 
@@ -97,44 +94,13 @@ class Pagination extends DataObject {
     }
 
     /**
-     * Retourne le rendu de la pagination
-     *
-     * @return  string  Le rendu.
-     *
-     * @throws  \RuntimeException
-     */
-    public function render() {
-
-        // Get the layout path.
-        $path = JPATH_THEME . "/html/layouts/pagination.php";
-
-        // Check if the layout path was found.
-        if (!file_exists($path)) {
-            throw new \RuntimeException('Pagination Layout Path Not Found');
-        }
-
-        // Start an output buffer.
-        ob_start();
-
-        // Load the layout.
-        include $path;
-
-        // Get the layout contents.
-        $output = ob_get_clean();
-
-        return $output;
-
-    }
-
-    /**
      * Create and return the pagination pages counter string, ie. Page 2 of 4.
      *
      * @return  string   Pagination pages counter string.
      */
     public function getPagesCounter() {
 
-        $text = Web::getInstance()
-                   ->getText();
+        $text = (new LanguageFactory())->getText();
         $html = null;
 
         if ($this->getProperty('pagesTotal') > 1) {
