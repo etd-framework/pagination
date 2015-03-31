@@ -15,8 +15,8 @@
   ],
   "require": {
     "php": ">=5.4",
-    "joomla/data": "~2.0@dev",
-    "joomla/language": "~2.0@dev"
+    "joomla/data": "2.0.*@dev",
+    "etdsolutions/language": "@dev"
   },
   "autoload": {
     "psr-4": {
